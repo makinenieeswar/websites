@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Eeswar Makineni — Founder & CEO | MET-Ai Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1a1f5e;--navy2:#111444;--teal:#00b4b4;--teal2:#00d4d4;--gold:#e8901a;--gold2:#f5a623;--purple:#7b2fc9;--bg:#f0f4ff;--text:#1a1f5e;--muted:#5a6490;--light:#e8eeff;--border:rgba(26,31,94,0.1);--shadow:0 8px 40px rgba(26,31,94,0.12);--shadow2:0 20px 60px rgba(26,31,94,0.18);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Nunito',sans-serif;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 60px;display:flex;align-items:center;justify-content:space-between;height:80px;background:rgba(255,255,255,0.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);box-shadow:0 2px 20px rgba(26,31,94,0.07);}
+.nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none;}
+.nav-logo img{height:52px;width:52px;border-radius:50%;object-fit:contain;background:var(--bg);}
+.nav-logo-text .brand{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:20px;color:var(--navy);letter-spacing:1px;}
+.nav-logo-text .brand span{color:var(--teal);}
+.nav-logo-text .tagline{font-size:9px;color:var(--purple);letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-top:2px;}
+.back-btn { display:inline-flex;align-items:center;gap:7px;padding:9px 20px;background:linear-gradient(135deg,var(--navy),var(--purple));color:#fff;font-family:"Rajdhani",sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;text-decoration:none;border-radius:50px;transition:all 0.3s;box-shadow:0 4px 16px rgba(123,47,201,0.3);}
+  .back-btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(123,47,201,0.45);}
+  .nav-right-btns{display:flex;align-items:center;gap:10px;}
+  .home-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;background:#fff;border:1.5px solid var(--border);color:var(--navy);font-family:"Rajdhani",sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;text-decoration:none;border-radius:50px;transition:all 0.3s;box-shadow:0 2px 10px rgba(26,31,94,0.07);}
+  .home-btn:hover{border-color:var(--teal);color:var(--teal);transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,180,180,0.18);}
+.breadcrumb{font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:16px;font-family:'Space Mono',monospace;}
+.breadcrumb a{color:var(--teal2);text-decoration:none;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:7px 18px;border-radius:100px;margin-bottom:24px;background:rgba(0,180,180,0.15);border:1px solid rgba(0,212,212,0.3);font-size:11px;color:var(--teal2);letter-spacing:2px;font-family:'Space Mono',monospace;text-transform:uppercase;}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.d1{transition-delay:0.1s;}.d2{transition-delay:0.2s;}.d3{transition-delay:0.3s;}
+footer{background:linear-gradient(135deg,var(--navy2),var(--navy));color:rgba(255,255,255,0.5);padding:36px 60px;text-align:center;font-size:13px;border-top:1px solid rgba(255,255,255,0.08);}
+footer span{color:var(--gold2);font-weight:700;}
+.pill{padding:7px 16px;border-radius:100px;font-size:13px;font-weight:700;letter-spacing:0.5px;display:inline-block;}
+.pill-teal{background:rgba(0,180,180,0.1);color:var(--teal);border:1px solid rgba(0,180,180,0.25);}
+.pill-gold{background:rgba(232,144,26,0.1);color:var(--gold);border:1px solid rgba(232,144,26,0.25);}
+.pill-purple{background:rgba(123,47,201,0.1);color:var(--purple);border:1px solid rgba(123,47,201,0.25);}
+.pill-navy{background:rgba(26,31,94,0.07);color:var(--navy);border:1px solid rgba(26,31,94,0.15);}
+@media(max-width:900px){nav{padding:0 20px;}.back-btn span{display:none;}footer{padding:24px;}}
+</style>
+<style>
+.founder-hero{min-height:70vh;display:flex;align-items:center;padding:120px 60px 80px;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--navy2) 0%,var(--navy) 50%,#2a1a7a 100%);}
+.founder-hero-orb1{position:absolute;width:550px;height:550px;border-radius:50%;background:radial-gradient(circle,rgba(0,180,180,0.13),transparent 65%);top:-120px;right:-60px;pointer-events:none;}
+.founder-hero-orb2{position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(232,144,26,0.1),transparent 65%);bottom:-80px;left:60px;pointer-events:none;}
+.hero-inner{display:grid;grid-template-columns:auto 1fr;gap:60px;align-items:center;position:relative;z-index:2;max-width:1000px;}
+.avatar-wrap{position:relative;}
+.avatar-ring{width:220px;height:220px;border-radius:50%;padding:6px;background:linear-gradient(135deg,var(--teal),var(--purple),var(--gold));box-shadow:0 0 60px rgba(0,180,180,0.4);}
+.avatar-inner{width:100%;height:100%;border-radius:50%;background:linear-gradient(135deg,var(--navy),#2a1a7a);display:flex;align-items:center;justify-content:center;font-size:80px;overflow:hidden;}
+.avatar-inner img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+.status-badge{position:absolute;bottom:10px;right:10px;background:var(--teal);color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px;letter-spacing:1px;font-family:'Space Mono',monospace;white-space:nowrap;}
+.hero-text .name{font-family:'Rajdhani',sans-serif;font-size:clamp(36px,5vw,64px);font-weight:700;color:#fff;line-height:1.05;margin-bottom:8px;}
+.hero-text .name span{color:var(--teal2);}
+.hero-text .role{font-size:16px;color:rgba(255,255,255,0.6);letter-spacing:2px;text-transform:uppercase;font-family:'Space Mono',monospace;margin-bottom:24px;}
+.hero-text .tagline-quote{font-size:20px;color:rgba(255,255,255,0.85);line-height:1.7;font-style:italic;border-left:3px solid var(--teal2);padding-left:20px;margin-bottom:32px;}
+.hero-social{display:flex;gap:14px;flex-wrap:wrap;}
+.hs-btn{display:flex;align-items:center;gap:10px;padding:12px 22px;border-radius:50px;text-decoration:none;font-family:'Rajdhani',sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;transition:all 0.3s;}
+.hs-btn.portfolio{background:linear-gradient(135deg,var(--teal),var(--teal2));color:var(--navy);box-shadow:0 6px 24px rgba(0,180,180,0.4);}
+.hs-btn.portfolio:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(0,180,180,0.55);}
+.hs-btn.linkedin{background:rgba(0,119,181,0.15);border:1px solid rgba(0,119,181,0.4);color:#60c0f5;}
+.hs-btn.linkedin:hover{background:#0077b5;color:#fff;}
+.page-body{padding:80px 60px;max-width:1200px;margin:0 auto;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-bottom:60px;}
+.info-card{background:#fff;border-radius:20px;padding:40px;border:1px solid var(--border);box-shadow:var(--shadow);}
+.info-card h2{font-family:'Rajdhani',sans-serif;font-size:26px;font-weight:700;color:var(--navy);margin-bottom:20px;border-bottom:2px solid var(--teal);padding-bottom:12px;}
+.info-card p{font-size:15px;color:var(--muted);line-height:1.9;margin-bottom:14px;}
+.info-card ul{list-style:none;}
+.info-card ul li{font-size:15px;color:var(--muted);padding:8px 0 8px 28px;position:relative;border-bottom:1px solid var(--border);}
+.info-card ul li:last-child{border-bottom:none;}
+.info-card ul li::before{content:'→';position:absolute;left:0;color:var(--teal);font-weight:700;}
+.vision-banner{background:linear-gradient(135deg,var(--navy2),var(--navy));border-radius:24px;padding:56px;color:#fff;text-align:center;margin-bottom:60px;position:relative;overflow:hidden;}
+.vision-banner::before{content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(0,180,180,0.12),transparent);top:-100px;right:-80px;}
+.vision-banner h2{font-family:'Rajdhani',sans-serif;font-size:36px;font-weight:700;margin-bottom:16px;}
+.vision-banner h2 span{color:var(--teal2);}
+.vision-banner p{color:rgba(255,255,255,0.65);font-size:17px;line-height:1.8;max-width:700px;margin:0 auto 32px;}
+.connect-btn{display:inline-flex;align-items:center;gap:10px;padding:16px 44px;background:linear-gradient(135deg,var(--teal),var(--teal2));color:var(--navy);font-family:'Rajdhani',sans-serif;font-size:16px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border-radius:50px;text-decoration:none;transition:all 0.3s;box-shadow:0 8px 30px rgba(0,180,180,0.4);}
+.connect-btn:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(0,180,180,0.55);}
+.achievements{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:60px;}
+.ach-card{background:#fff;border-radius:16px;padding:32px 24px;text-align:center;border:1px solid var(--border);box-shadow:var(--shadow);transition:all 0.3s;}
+.ach-card:hover{transform:translateY(-4px);box-shadow:var(--shadow2);border-color:var(--teal);}
+.ach-icon{font-size:44px;margin-bottom:14px;}
+.ach-title{font-family:'Rajdhani',sans-serif;font-size:20px;font-weight:700;color:var(--navy);margin-bottom:8px;}
+.ach-desc{font-size:13px;color:var(--muted);line-height:1.75;}
+@media(max-width:900px){
+  .founder-hero{padding:100px 24px 60px;}
+  .hero-inner{grid-template-columns:1fr;text-align:center;gap:32px;}
+  .avatar-ring{width:160px;height:160px;margin:0 auto;}
+  .hero-text .tagline-quote{border-left:none;border-top:3px solid var(--teal2);padding:16px 0 0;}
+  .hero-social{justify-content:center;}
+  .page-body{padding:50px 24px;}
+  .two-col,.achievements{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="met-ai-solutions.html" class="nav-logo" title="Home">
+    <img src="logo1.png" alt="MET-Ai Logo">
+    <div class="nav-logo-text">
+      <div class="brand">MET-<span>Ai</span> Solutions</div>
+      <div class="tagline">Healthcare Innovation Through AI</div>
+    </div>
+  </a>
+  <div class="nav-right-btns">
+    <a href="met-ai-solutions.html" class="home-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      Home
+    </a>
+    <a href="met-ai-solutions.html#about" class="back-btn">
+      &#8592; About
+    </a>
+  </div>
+</nav>
+<section class="founder-hero">
+  <div class="founder-hero-orb1"></div><div class="founder-hero-orb2"></div>
+  <div class="hero-inner">
+    <div class="avatar-wrap">
+      <div class="avatar-ring">
+        <div class="avatar-inner">
+          <img src="logo1.png" alt="Eeswar Makineni" onerror="this.style.display='none'">
+        </div>
+      </div>
+      <div class="status-badge">&#9679; Available for Connect</div>
+    </div>
+    <div class="hero-text">
+      <div class="breadcrumb"><a href="met-ai-solutions.html">Home</a> / <a href="met-ai-solutions.html#about">About</a> / Eeswar Makineni</div>
+      <div class="hero-badge">Founder &amp; CEO &middot; MET-Ai Solutions</div>
+      <div class="name">Eeswar <span>Makineni</span></div>
+      <div class="role">Visionary Founder &middot; MedTech Pioneer &middot; Healthcare AI Leader</div>
+      <div class="tagline-quote">"Every hospital in the world deserves the most intelligent, automated, and accurate care system that technology can build. That is what MET-Ai is here to deliver."</div>
+      <div class="hero-social">
+        <a class="hs-btn portfolio" href="https://makinenieeswar.github.io/websites/" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          View Portfolio
+        </a>
+        <a class="hs-btn linkedin" href="https://www.linkedin.com/in/met-ai-solutions-a220b2404?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="page-body">
+  <div class="achievements">
+    <div class="ach-card reveal"><div class="ach-icon">🚀</div><div class="ach-title">Visionary Founder</div><p class="ach-desc">Founded MET-Ai Solutions with a bold mission to bring complete AI-driven automation to every hospital in India and globally.</p></div>
+    <div class="ach-card reveal d1"><div class="ach-icon">🧬</div><div class="ach-title">MedTech Pioneer</div><p class="ach-desc">Pioneering the convergence of embedded electronics, IoT, and artificial intelligence to create the hospital of the future.</p></div>
+    <div class="ach-card reveal d2"><div class="ach-icon">🌐</div><div class="ach-title">Healthcare AI Leader</div><p class="ach-desc">Building one of India's most ambitious healthcare AI platforms — from diagnostics to autonomous hospital operations.</p></div>
+  </div>
+
+  <div class="two-col">
+    <div class="info-card reveal">
+      <h2>About Eeswar</h2>
+      <p>Eeswar Makineni is the founder and CEO of MET-Ai Solutions — a startup at the cutting edge of healthcare artificial intelligence. His journey began with a single, powerful question: <em>Why does one of the world's most critical industries still operate on manual, error-prone processes?</em></p>
+      <p>That question drove him to build MET-Ai Solutions — a company that combines Medi Electronic Technology with the full power of Artificial Intelligence to automate, predict, and transform every facet of hospital care.</p>
+      <p>Eeswar's vision goes beyond software. He is building the intelligent infrastructure — hardware, software, and AI — that future hospitals will run on. A system where every patient is monitored continuously, every diagnosis is AI-assisted, and every decision is backed by data.</p>
+    </div>
+    <div class="info-card reveal d1">
+      <h2>Core Expertise</h2>
+      <ul>
+        <li>Healthcare AI &amp; Intelligent Automation Systems</li>
+        <li>Medi Electronic Technology &amp; IoT Device Integration</li>
+        <li>Machine Learning &amp; Predictive Health Analytics</li>
+        <li>Hospital Workflow Design &amp; Digital Transformation</li>
+        <li>AI Diagnostics &amp; Clinical Decision Support</li>
+        <li>Startup Strategy, Product Vision &amp; Leadership</li>
+        <li>Embedded Systems &amp; Medical-Grade Electronics</li>
+        <li>Precision Medicine &amp; Genomic AI Applications</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="info-card reveal">
+      <h2>The MET-Ai Vision</h2>
+      <p>Eeswar founded MET-Ai with a phased roadmap to total hospital transformation:</p>
+      <ul>
+        <li>Phase 1 — AI-powered patient intake and triage automation</li>
+        <li>Phase 2 — Intelligent diagnostics across all modalities</li>
+        <li>Phase 3 — Automated, personalized treatment planning</li>
+        <li>Phase 4 — 24/7 predictive monitoring and early warning</li>
+        <li>Phase 5 — The fully autonomous, AI-run hospital</li>
+      </ul>
+      <p style="margin-top:16px">Each phase builds on the last — creating a compounding intelligence platform that grows smarter with every patient interaction.</p>
+    </div>
+    <div class="info-card reveal d1">
+      <h2>Why MET-Ai?</h2>
+      <p>The name says it all: <strong>Medi</strong> for medicine, <strong>Electronic</strong> for the hardware layer, <strong>Technology</strong> for the systems — and <strong>AI</strong> for the intelligence that binds it all together.</p>
+      <p>Eeswar believes that the future of healthcare is not just digital — it is <em>intelligent</em>. Sensors that never sleep. Algorithms that never tire. Systems that learn from every patient to serve the next one better.</p>
+      <p>MET-Ai is not just a software company. It is a full-stack healthcare intelligence company — from the sensor on the patient's wrist to the AI model generating the diagnosis.</p>
+    </div>
+  </div>
+
+  <div class="vision-banner reveal">
+    <h2>Ready to <span>Connect with Eeswar?</span></h2>
+    <p>Whether you're a hospital looking to transform, an investor exploring the future of MedTech, or a developer passionate about healthcare AI — Eeswar wants to hear from you.</p>
+    <a class="connect-btn" href="https://makinenieeswar.github.io/websites/" target="_blank">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      Visit Eeswar's Portfolio
+    </a>
+  </div>
+</div>
+<footer>&copy; 2025 MET-Ai Solutions. All rights reserved. Founded by <span>Eeswar Makineni</span> &middot; Medi Electronic Technology &ndash; AI Solutions</footer>
+<script>
+const _rv=document.querySelectorAll('.reveal');
+const _ob=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');_ob.unobserve(x.target);}}),{threshold:0.1});
+_rv.forEach(r=>_ob.observe(r));
+</script>
+
+<script>
+  // Disable right-click
+  document.addEventListener('contextmenu', e => e.preventDefault());
+  // Disable common dev shortcuts
+  document.addEventListener('keydown', e => {
+    if (e.key === 'F12') { e.preventDefault(); return false; }
+    if ((e.ctrlKey || e.metaKey) && e.shiftKey && ['I','J','C'].includes(e.key.toUpperCase())) { e.preventDefault(); return false; }
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'u') { e.preventDefault(); return false; }
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') { e.preventDefault(); return false; }
+  });
+  // Detect DevTools open and blur
+  (function devBlock() {
+    const threshold = 160;
+    setInterval(() => {
+      if (window.outerWidth - window.innerWidth > threshold || window.outerHeight - window.innerHeight > threshold) {
+        document.body.style.filter = 'blur(20px)';
+        document.body.style.pointerEvents = 'none';
+      } else {
+        document.body.style.filter = '';
+        document.body.style.pointerEvents = '';
+      }
+    }, 1000);
+  })();
+</script>
+</body></html>

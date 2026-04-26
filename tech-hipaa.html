@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HIPAA-Grade Security | MET-Ai Solutions</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:#1a1f5e; --navy2:#111444; --teal:#00b4b4; --teal2:#00d4d4;
+    --gold:#e8901a; --gold2:#f5a623; --purple:#7b2fc9;
+    --bg:#f0f4ff; --text:#1a1f5e; --muted:#5a6490;
+    --light:#e8eeff; --border:rgba(26,31,94,0.1);
+    --shadow:0 8px 40px rgba(26,31,94,0.12); --shadow2:0 20px 60px rgba(26,31,94,0.18);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: 'Nunito', sans-serif; overflow-x: hidden; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; height: 80px; background: rgba(255,255,255,0.96); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); box-shadow: 0 2px 20px rgba(26,31,94,0.07); }
+  .nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+  .nav-logo img { height: 52px; width: 52px; border-radius: 50%; object-fit: contain; background: var(--bg); }
+  .nav-logo-text .brand { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 20px; color: var(--navy); letter-spacing: 1px; }
+  .nav-logo-text .brand span { color: var(--teal); }
+  .nav-logo-text .tagline { font-size: 9px; color: var(--purple); letter-spacing: 2px; text-transform: uppercase; font-weight: 700; margin-top: 2px; }
+  .back-btn { display: flex; align-items: center; gap: 8px; padding: 10px 24px; background: linear-gradient(135deg, var(--navy), var(--purple)); color: #fff; font-family: 'Rajdhani', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; border-radius: 50px; transition: all 0.3s; box-shadow: 0 4px 20px rgba(123,47,201,0.3); }
+  .back-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(123,47,201,0.45); }
+  .tech-hero { min-height: 55vh; display: flex; align-items: center; padding: 120px 60px 80px; position: relative; overflow: hidden; background: linear-gradient(135deg, var(--navy2) 0%, var(--navy) 50%, #2a1a7a 100%); }
+  .tech-hero-orb1 { position: absolute; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(0,180,180,0.14), transparent 65%); top: -100px; right: -50px; pointer-events: none; }
+  .tech-hero-orb2 { position: absolute; width: 350px; height: 350px; border-radius: 50%; background: radial-gradient(circle, rgba(232,144,26,0.1), transparent 65%); bottom: -80px; left: 80px; pointer-events: none; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 7px 18px; border-radius: 100px; margin-bottom: 24px; background: rgba(0,180,180,0.15); border: 1px solid rgba(0,212,212,0.3); font-size: 11px; color: var(--teal2); letter-spacing: 2px; font-family: 'Space Mono', monospace; text-transform: uppercase; }
+  .tech-hero-icon { font-size: 72px; margin-bottom: 20px; display: block; filter: drop-shadow(0 0 20px rgba(0,180,180,0.4)); animation: floatIcon 4s ease-in-out infinite; }
+  @keyframes floatIcon { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+  .tech-hero h1 { font-family: 'Rajdhani', sans-serif; font-size: clamp(36px, 6vw, 72px); font-weight: 700; color: #fff; line-height: 1.05; margin-bottom: 20px; }
+  .tech-hero h1 span { color: var(--teal2); }
+  .tech-hero p { font-size: 18px; color: rgba(255,255,255,0.7); max-width: 600px; line-height: 1.8; }
+  .breadcrumb { font-size: 13px; color: rgba(255,255,255,0.4); margin-bottom: 16px; font-family: 'Space Mono', monospace; }
+  .breadcrumb a { color: var(--teal2); text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .page-content { padding: 80px 60px; }
+  .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 80px; }
+  .content-grid.reverse { direction: rtl; }
+  .content-grid.reverse > * { direction: ltr; }
+  .content-block h2 { font-family: 'Rajdhani', sans-serif; font-size: 36px; font-weight: 700; color: var(--navy); margin-bottom: 16px; }
+  .content-block h2 span { color: var(--teal); }
+  .content-block p { font-size: 16px; color: var(--muted); line-height: 1.9; margin-bottom: 16px; }
+  .content-block ul { list-style: none; margin-top: 8px; }
+  .content-block ul li { font-size: 15px; color: var(--muted); line-height: 1.8; padding: 6px 0 6px 28px; position: relative; }
+  .content-block ul li::before { content: 'â†''; position: absolute; left: 0; color: var(--teal); font-weight: 700; }
+  .img-box { border-radius: 20px; overflow: hidden; box-shadow: var(--shadow2); position: relative; aspect-ratio: 4/3; background: linear-gradient(135deg, var(--navy2), var(--navy)); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 16px; }
+  .img-box .img-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(17,20,68,0.7), transparent 60%); }
+  .img-box .img-caption { position: absolute; bottom: 20px; left: 20px; right: 20px; color: #fff; font-size: 12px; font-weight: 600; letter-spacing: 1px; font-family: 'Space Mono', monospace; z-index:2; }
+  .img-placeholder { font-size: 90px; }
+  .img-label { color: rgba(255,255,255,0.5); font-size: 13px; font-family: 'Space Mono', monospace; letter-spacing: 2px; }
+  .stats-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin: 60px 0; }
+  .stat-box { background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 32px 24px; text-align: center; box-shadow: var(--shadow); }
+  .stat-box .snum { font-family: 'Rajdhani', sans-serif; font-size: 44px; font-weight: 700; color: var(--teal); line-height: 1; }
+  .stat-box .slabel { font-size: 13px; color: var(--muted); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-top: 8px; }
+  .use-cases { background: #fff; border-radius: 24px; padding: 48px; box-shadow: var(--shadow); margin-bottom: 60px; }
+  .use-cases h2 { font-family: 'Rajdhani', sans-serif; font-size: 32px; font-weight: 700; color: var(--navy); margin-bottom: 32px; }
+  .uc-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+  .uc-card { background: var(--bg); border: 1px solid var(--border); border-radius: 14px; padding: 24px 20px; transition: all 0.3s; }
+  .uc-card:hover { border-color: var(--teal); transform: translateY(-4px); box-shadow: var(--shadow); }
+  .uc-icon { font-size: 32px; margin-bottom: 12px; }
+  .uc-title { font-family: 'Rajdhani', sans-serif; font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+  .uc-desc { font-size: 13px; color: var(--muted); line-height: 1.75; }
+  .page-cta { text-align: center; padding: 60px; background: linear-gradient(135deg, var(--navy2), var(--navy)); border-radius: 24px; color: #fff; }
+  .page-cta h2 { font-family: 'Rajdhani', sans-serif; font-size: 36px; font-weight: 700; margin-bottom: 12px; }
+  .page-cta p { color: rgba(255,255,255,0.65); font-size: 16px; margin-bottom: 32px; }
+  .cta-btn { display: inline-block; padding: 16px 44px; background: linear-gradient(135deg, var(--teal), var(--teal2)); color: var(--navy); font-family: 'Rajdhani', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; border-radius: 50px; text-decoration: none; transition: all 0.3s; box-shadow: 0 8px 30px rgba(0,180,180,0.4); }
+  .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(0,180,180,0.55); }
+  footer { background: linear-gradient(135deg, var(--navy2), var(--navy)); color: rgba(255,255,255,0.55); padding: 36px 60px; text-align: center; font-size: 13px; border-top: 1px solid rgba(255,255,255,0.08); }
+  footer span { color: var(--gold2); font-weight: 700; }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  @media(max-width:900px){
+    nav{padding:0 20px;}
+    .tech-hero{padding:100px 24px 60px;}
+    .page-content{padding:50px 24px;}
+    .content-grid{grid-template-columns:1fr; gap:32px;}
+    .content-grid.reverse{direction:ltr;}
+    .stats-row{grid-template-columns:1fr 1fr;}
+    .uc-grid{grid-template-columns:1fr;}
+    .page-cta{padding:40px 24px;}
+    footer{padding:24px;}
+  }
+</style>
+
+</head>
+<body>
+<nav>
+  <a href="met-ai-solutions.html" class="nav-logo">
+    <img src="logo1.png" alt="MET-Ai Logo">
+    <div class="nav-logo-text">
+      <div class="brand">MET-<span>Ai</span> Solutions</div>
+      <div class="tagline">Healthcare Innovation Through AI</div>
+    </div>
+  </a>
+  <a href="met-ai-solutions.html#technology" class="back-btn">&larr; Back to Technologies</a>
+</nav><section class="tech-hero">
+  <div class="tech-hero-orb1"></div><div class="tech-hero-orb2"></div>
+  <div>
+    <div class="breadcrumb"><a href="met-ai-solutions.html">Home</a> / <a href="met-ai-solutions.html#technology">Technologies</a> / HIPAA-Grade Security</div>
+    <div class="hero-badge">MET-Ai Technology Stack</div>
+    <span class="tech-hero-icon">🔐</span>
+    <h1>HIPAA-Grade <span>Security</span></h1>
+    <p>Medical data is the most sensitive data in the world. MET-Ai's security infrastructure is built to the highest standards — HIPAA, DPDP, ISO 27001 — protecting every patient record with military-grade safeguards.</p>
+  </div>
+</section>
+<div class="page-content">
+  <div class="stats-row"><div class="stat-box reveal"><div class="snum">0</div><div class="slabel">Data Breaches</div></div><div class="stat-box reveal"><div class="snum">AES-256</div><div class="slabel">Encryption Standard</div></div><div class="stat-box reveal"><div class="snum">100%</div><div class="slabel">Compliance Ready</div></div></div>
+  
+<div class="content-grid  reveal">
+  <div class="content-block">
+    <h2>Security by <span>Design</span></h2>
+    <p>At MET-Ai, security is built into every line of code, every API call, and every data flow from day one. We follow a Zero Trust architecture — every access request is verified regardless of origin.</p><p>All patient data is encrypted at rest using AES-256 and in transit using TLS 1.3. Role-based access control ensures clinicians only see what they need for patient care.</p>
+    <ul><li>End-to-end encryption for all patient data</li><li>Zero Trust network architecture</li><li>Multi-factor authentication for all clinical users</li><li>Complete audit trail for every data access event</li></ul>
+  </div>
+  <div class="img-box">
+    <div class="img-overlay"></div>
+    <div class="img-placeholder">🔐</div>
+    <div class="img-label">MET-Ai · MET-Ai Zero Trust Security Architecture</div>
+    <div class="img-caption">MET-Ai Zero Trust Security Architecture</div>
+  </div>
+</div>
+<div class="content-grid reverse reveal">
+  <div class="content-block">
+    <h2>Compliance & <span>Data Sovereignty</span></h2>
+    <p>MET-Ai is designed for compliance with India's Digital Personal Data Protection Act (DPDP), HIPAA international standards, and ISO/IEC 27001. All data for Indian hospitals is stored in India.</p><p>Our compliance team continuously monitors regulatory changes and updates the platform to ensure your hospital is always audit-ready.</p>
+    <ul><li>India DPDP Act compliance — full data residency in India</li><li>HIPAA-equivalent controls for international deployments</li><li>Automated compliance reporting and audit log generation</li><li>Patient consent management with granular permissions</li></ul>
+  </div>
+  <div class="img-box">
+    <div class="img-overlay"></div>
+    <div class="img-placeholder">🔐</div>
+    <div class="img-label">MET-Ai · Compliance Dashboard — Audit-Ready at All Times</div>
+    <div class="img-caption">Compliance Dashboard — Audit-Ready at All Times</div>
+  </div>
+</div>
+  <div class="use-cases reveal">
+    <h2>Healthcare Use Cases</h2>
+    <div class="uc-grid"><div class="uc-card"><div class="uc-icon">🔒</div><div class="uc-title">Patient Data Protection</div><p class="uc-desc">Every patient record encrypted, access-controlled, and audit-trailed from creation to deletion.</p></div><div class="uc-card"><div class="uc-icon">👤</div><div class="uc-title">Identity & Access Management</div><p class="uc-desc">Biometric and MFA login for all clinical staff with role-based data access.</p></div><div class="uc-card"><div class="uc-icon">🕵️</div><div class="uc-title">Threat Detection</div><p class="uc-desc">AI-powered anomaly detection identifies suspicious access patterns and triggers instant lockdown.</p></div><div class="uc-card"><div class="uc-icon">📋</div><div class="uc-title">Regulatory Audit Support</div><p class="uc-desc">Generate complete compliance reports for NABH, HIPAA, and DPDP audits in minutes.</p></div><div class="uc-card"><div class="uc-icon">🔑</div><div class="uc-title">Patient Consent Portal</div><p class="uc-desc">Digital consent management — patients control who sees their data and for how long.</p></div><div class="uc-card"><div class="uc-icon">🌐</div><div class="uc-title">Secure API Gateway</div><p class="uc-desc">All third-party integrations routed through a secure, rate-limited, authenticated API gateway.</p></div></div>
+  </div>
+  <div class="page-cta reveal">
+    <h2>Ready to Implement HIPAA-Grade Security?</h2>
+    <p>Contact Eeswar Makineni and the MET-Ai team to explore how this technology can transform your hospital.</p>
+    <a href="met-ai-solutions.html#contact" class="cta-btn">Get In Touch &rarr;</a>
+  </div>
+</div>
+<footer>&copy; 2025 MET-Ai Solutions. All rights reserved. Founded by <span>Eeswar Makineni</span> &middot; Medi Electronic Technology &ndash; AI Solutions</footer>
+
+<script>
+  const revs = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(entries => entries.forEach(e => {
+    if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }
+  }), {threshold: 0.1});
+  revs.forEach(r => obs.observe(r));
+</script>
+
+</body>
+</html>
